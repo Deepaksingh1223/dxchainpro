@@ -34,7 +34,7 @@ export default function ForgotPassword() {
 
         .fp-container {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f0fdf9 0%, #e8f5f1 40%, #f0f7ff 100%);
+            background:linear-gradient(135deg, #f0fdf930 0%, #e8f5f19e 40%, #ffffff6b 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -46,8 +46,9 @@ export default function ForgotPassword() {
           content: '';
           position: absolute;
           inset: 0;
-          background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b894' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-          pointer-events: none;
+           background-image: url("/assets/images/background-auth.jpg");
+          pointer-events: none;    
+          background-size: cover;.rg-scene
         }
 
         .fp-card {
