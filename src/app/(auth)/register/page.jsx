@@ -45,15 +45,16 @@ export default function Register() {
 
         .rg-scene {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f0fdf9 0%, #e8f5f1 40%, #f0f7ff 100%);
+        background:linear-gradient(135deg, #f0fdf930 0%, #e8f5f19e 40%, #ffffff6b 100%);
           display: flex; align-items: center; justify-content: center;
           padding: 20px; position: relative;
           font-family: 'Inter', sans-serif;
         }
         .rg-scene::before {
-          content: ''; position: absolute; inset: 0;
-          background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b894' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-          pointer-events: none;
+          content: ''; position: absolute; inset: 0;   
+            background-image: url("/assets/images/background-auth.jpg");
+          pointer-events: none;    
+          background-size: cover;
         }
 
         .rg-modal {
@@ -183,7 +184,10 @@ export default function Register() {
         @media (max-width: 500px) {
           .rg-modal { border-radius: 16px; }
           .rg-body { padding: 18px 16px 22px; }
+            .rg-header{flex-wrap: wrap;
+          }
         }
+        
       `}</style>
 
       <div className="rg-scene">
@@ -192,8 +196,7 @@ export default function Register() {
 
           {/* Header */}
           <div className="rg-header">
-            <div className="rg-brand">
-              <div className="rg-brand-icon">DC</div>
+            <div className="rg-brand"> 
               <span className="rg-brand-name">DexChain<span>Pro</span></span>
             </div>
             <Link href="/login" style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 13, color: '#7a9e96', textDecoration: 'none', fontWeight: 500 }}>

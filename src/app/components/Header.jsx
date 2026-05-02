@@ -131,7 +131,7 @@ export default function Header() {
                 {/* ── Desktop Right Buttons (xl and above) ── */}
                 <div className="col-auto d-none d-xl-block">
                   <div className="header-button">
-                    <Link href="/register" className="th-btn2 style2">
+                    <Link href="/login" className="th-btn2 style2">
                       Register
                       <Image
                         src="/assets/img/icon/user.svg"
@@ -215,7 +215,7 @@ export default function Header() {
               </p>
               <div className="col-auto d-none d-xl-block">
                 <div className="header-button mb-5">
-                  <Link href="/register" className="th-btn2 style2">
+                  <Link href="/login" className="th-btn2 style2">
                     Register{' '}
                     <Image
                       src="/assets/img/icon/user.svg"
@@ -280,7 +280,7 @@ export default function Header() {
               <li><a href="/" onClick={closeMobileNav}>Home</a></li>
               <li><a href="#about-sec" onClick={closeMobileNav}>About Us</a></li>
               <li><a href="#features-sec" onClick={closeMobileNav}>Features</a></li>
-              <li><a href="/register" onClick={closeMobileNav}>Register</a></li>
+              <li><a href="/login" onClick={closeMobileNav}>Register</a></li>
               <li><a href="/login" onClick={closeMobileNav}>Connect Wallet</a></li>
             </ul>
           </div>
