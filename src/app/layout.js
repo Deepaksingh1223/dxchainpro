@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+ 
 
 import Script from 'next/script' 
 
@@ -9,8 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   return (
     <html lang="zxx" className="no-js">
-      <head>
-    
+      <head> 
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/css/fontawesome.min.css" />
         <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
@@ -19,13 +19,8 @@ export default function RootLayout({ children }) {
       </head>
 <body
   className={`theme ${inter.className}`}
-  suppressHydrationWarning={true}  
->
-      
-      
+  suppressHydrationWarning={true}>
         {children}
-        
-
         {/* Scripts */}
         <Script src="/assets/js/vendor/jquery-3.7.1.min.js" strategy="beforeInteractive" />
         <Script src="/assets/js/swiper-bundle.min.js" strategy="afterInteractive" />
