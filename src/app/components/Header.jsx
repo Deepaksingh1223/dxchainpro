@@ -132,7 +132,7 @@ export default function Header() {
                 <div className="col-auto d-none d-xl-block">
                   <div className="header-button">
                     <Link href="/login" className="th-btn2 style2">
-                      Login
+                      Register
                       <Image
                         src="/assets/img/icon/user.svg"
                         alt="Login"
@@ -140,7 +140,7 @@ export default function Header() {
                         height={15}
                       />
                     </Link>
-                    <Link href="/" className="th-btn2">
+                    <Link href="/login" className="th-btn2">
                       Connect Wallet
                     </Link>
                     {/* Side-menu trigger (3 bars icon) */}
@@ -215,8 +215,8 @@ export default function Header() {
               </p>
               <div className="col-auto d-none d-xl-block">
                 <div className="header-button mb-5">
-                  <Link href="/" className="th-btn2 style2">
-                    Login{' '}
+                  <Link href="/login" className="th-btn2 style2">
+                    Register{' '}
                     <Image
                       src="/assets/img/icon/user.svg"
                       alt="Login"
@@ -224,7 +224,7 @@ export default function Header() {
                       height={15}
                     />
                   </Link>
-                  <Link href="/" className="th-btn2">
+                  <Link href="/login" className="th-btn2">
                     Connect Wallet
                   </Link>
                 </div>
@@ -280,8 +280,8 @@ export default function Header() {
               <li><a href="/" onClick={closeMobileNav}>Home</a></li>
               <li><a href="#about-sec" onClick={closeMobileNav}>About Us</a></li>
               <li><a href="#features-sec" onClick={closeMobileNav}>Features</a></li>
-              <li><a href="#features-sec" onClick={closeMobileNav}>Login</a></li>
-              <li><a href="#features-sec" onClick={closeMobileNav}>Connect Wallet</a></li>
+              <li><a href="/login" onClick={closeMobileNav}>Register</a></li>
+              <li><a href="/login" onClick={closeMobileNav}>Connect Wallet</a></li>
             </ul>
           </div>
           <div className="widget footer-widget mb-0">
