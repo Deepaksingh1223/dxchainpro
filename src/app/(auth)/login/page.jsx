@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 
 const WALLETS = [
   {
@@ -52,6 +53,9 @@ export default function Register() {
   const [mmVisible, setMmVisible] = useState(false);
   const [mmState, setMmState] = useState("idle");
 
+
+  const router = useRouter();
+
   // NEW: wallet sub-screen state — "main" | "get-wallet" | "qr"
   const [walletScreen, setWalletScreen] = useState("main");
   // NEW: which wallet is showing QR
@@ -71,6 +75,7 @@ export default function Register() {
   const [referralCode, setReferralCode] = useState("");
   const [isCodeSent, setIsCodeSent] = useState(false);
   const [countdown, setCountdown] = useState(0);
+
 
   const validateUsername = (value) => {
     const regex = /^[a-zA-Z0-9]+$/;
@@ -564,6 +569,16 @@ export default function Register() {
               </svg>
               Register
             </button>
+{/* 
+                <button
+           
+              onClick={() =>router.push('/dashboard')}
+            >
+              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+              Register
+            </button> */}
           </div>
 
           <div className="dcp-body">
