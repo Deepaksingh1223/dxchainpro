@@ -19,16 +19,16 @@ export default function DashboardHeader() {
           <span className="ic">⬡</span>
           <span>Dashboard</span>
         </Link>
-        <Link href="/arbionengine" className="ni">
+        <Link href="/dashboard/arbionengine" className="ni">
           <span className="ic">⚡</span>
           <span>Arb Engine</span>
           <span className="npip pg"></span>
         </Link>
-        <Link href="/analytics" className="ni">
+        <Link href="/dashboard/analytics" className="ni">
           <span className="ic">📊</span>
           <span>Analytics</span>
         </Link>
-        <Link href="/simulate" className="ni">
+        <Link href="/dashboard/simulate" className="ni">
           <span className="ic">🧪</span>
           <span>Simulate</span>
           <span className="nbadge">BETA</span>
@@ -56,7 +56,7 @@ export default function DashboardHeader() {
       </div> */}
       <div className="nb">
         <div className="nlbl">Account</div>
-        <Link href="/profile" className="ni">
+        <Link href="/dashboard/profile" className="ni">
           <span className="ic">◎</span>
           <span>Profile</span>
         </Link>
