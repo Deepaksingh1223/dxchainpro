@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       <link rel="stylesheet" href="/assets/css/dashboard.css" />
-         {/* <link rel="stylesheet" href="/assets/css/dashboard1.css" /> */}
+       
       {/* NEXARB BACKGROUND SYSTEM */}
       <div className="bg-mesh">
         <div className="blob b1"></div>

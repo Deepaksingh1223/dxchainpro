@@ -19,7 +19,7 @@ export default function DashboardHeader() {
           <span className="ic">⬡</span>
           <span>Dashboard</span>
         </Link>
-        <Link href="/dashboard/arbionengine" className="ni">
+        <Link href="/dashboard/engine" className="ni">
           <span className="ic">⚡</span>
           <span>Arb Engine</span>
           <span className="npip pg"></span>
@@ -33,37 +33,37 @@ export default function DashboardHeader() {
           <span>Simulate</span>
           <span className="nbadge">BETA</span>
         </Link>
-        {/* <Link href="/auto-trade" className="ni">
+        <Link href="/dashboard/auto-trade" className="ni">
           <span className="ic">🔄</span>
           <span>Auto-Trade</span>
           <span className="npip py"></span>
-        </Link> */}
+        </Link>
       </div>
-      {/* <div className="nb">
+      <div className="nb">
         <div className="nlbl">Finance</div>
-        <Link href="/wallet" className="ni">
+        <Link href="/dashboard/wallet" className="ni">
           <span className="ic">◈</span>
           <span>Wallet</span>
         </Link>
-        <Link href="/community" className="ni">
+        <Link href="/dashboard/community" className="ni">
           <span className="ic">◉</span>
           <span>Community</span>
         </Link>
-        <Link href="/reports" className="ni">
+        <Link href="/dashboard/reports" className="ni">
           <span className="ic">📋</span>
           <span>Reports</span>
         </Link>
-      </div> */}
+      </div>
       <div className="nb">
         <div className="nlbl">Account</div>
         <Link href="/dashboard/profile" className="ni">
           <span className="ic">◎</span>
           <span>Profile</span>
         </Link>
-        {/* <Link href="/settings" className="ni">
+        <Link href="/dashboard/settings" className="ni">
           <span className="ic">⚙</span>
           <span>Settings</span>
-        </Link> */}
+        </Link>
       </div>
       <div className="sb-bot">
         <div className="urow">
