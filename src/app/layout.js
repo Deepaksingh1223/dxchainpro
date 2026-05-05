@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/css/fontawesome.min.css" />
         <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
         <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+      
       </head>
 <body
   className={`theme ${inter.className}`}
