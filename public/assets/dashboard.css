@@ -252,8 +252,51 @@ button {
   top: 0;
   height: 100vh;
   backdrop-filter: blur(28px) saturate(1.4);
-  transition: background .4s, border-color .4s, width .3s;
-  overflow: hidden
+  transition: transform .3s ease-in-out, background .4s, border-color .4s, width .3s;
+  overflow: hidden;
+  z-index: 200
+}
+
+.sidebar.mobile-hidden {
+  transform: translateX(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  box-shadow: 4px 0 24px rgba(0,0,0,.3)
+}
+
+@media (max-width: 992px) {
+  .sidebar.mobile-hidden {
+    transform: translateX(-100%)
+  }
+}
+
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all .25s;
+  font-size: 18px;
+  flex-shrink: 0
+}
+
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex
+  }
+}
+
+.hamburger:hover {
+  background: var(--bg-hover);
+  transform: scale(1.05)
 }
 
 .logo-area {

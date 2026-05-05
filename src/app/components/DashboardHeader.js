@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 
-export default function DashboardHeader() {
+export default function DashboardHeader({ className = '', mobileSidebarOpen, setMobileSidebarOpen }) {
+  const toggleSidebar = () => {
+    setMobileSidebarOpen(!mobileSidebarOpen);
+  };
+
   return (
-    <aside className="sidebar">
-      <div className="logo-area">
+    <aside className={`sidebar ${className}`} onClick={toggleSidebar}> 
+      <div className="logo-area"> 
         <div className="lmark">N</div>
         <div>
           <div className="ltext">NEX<em>ARB</em></div>

@@ -1,14 +1,21 @@
 "use client";
 
-export default function DashboardHeader({ theme, toggleTheme }) {
+export default function DashboardHeader({ theme, toggleTheme, mobileSidebarOpen, setMobileSidebarOpen }) {
   return (
     <header className="topbar">
       <div className="tb-l">
-        <div className="pgtitle">
+        <button 
+          className="hamburger" 
+          onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+          aria-label="Toggle sidebar"
+        >
+          ☰
+        </button>
+        <div className="pgtitle"> 
           Dashboard <span style={{ fontSize: "11px", color: "var(--text-3)", fontWeight: 400 }}>/ Overview</span>
         </div>
         <div className="pgcrumb">Last updated: just now · Uptime 14h 32m 16s</div>
-      </div>
+      </div> 
       <div className="tb-r">
         <div className="schip">
           <span className="dot dc"></span>

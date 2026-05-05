@@ -7,6 +7,7 @@ import DashboardPage from './page'; // Main content
 // Dashboard CSS now loaded globally in root layout.js - /assets/css/dashboard.css
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState('dark');
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -39,11 +40,11 @@ export default function RootLayout({ children }) {
       {/* MAIN LAYOUT */}
       <div className="layout">
         {/* NEXARB SIDEBAR */}
-        <DashboardSidebar />
+        <DashboardSidebar mobileSidebarOpen={mobileSidebarOpen} setMobileSidebarOpen={setMobileSidebarOpen} /> 
         
         {/* MAIN + TOPBAR */}
-        <div className="main">
-          <DashboardTopbar theme={theme} toggleTheme={toggleTheme} />
+        <div className="main"> 
+          <DashboardTopbar theme={theme} toggleTheme={toggleTheme} mobileSidebarOpen={mobileSidebarOpen} setMobileSidebarOpen={setMobileSidebarOpen} /> 
           <main className="content">
             {children}
           </main>
