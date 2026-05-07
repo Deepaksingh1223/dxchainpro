@@ -226,7 +226,7 @@ export default function DashboardPage() {
       oppLRef.current.innerHTML = opportunities.map(opp => `
         <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--b1)">
           <div><span class="tag ${opp.chain.toLowerCase()}">${opp.chain}</span> <span style="font-weight:700">${opp.pair}</span><div style="font-size:10px;color:var(--t3)">${opp.type}</div></div>
-          <div style="font-family:var(--mono);color:var(--g);font-weight:900">${opp.profit}</div>
+          <div style="font-family:var(--mono);color:var(--t3);font-weight:900">${opp.profit}</div>
         </div>
       `).join('');
     }
@@ -242,7 +242,7 @@ export default function DashboardPage() {
       execGridRef.current.innerHTML = executions.map(exec => `
         <div class="exec-item">
           <div style="display:flex;align-items:center;gap:8px"><span class="tag ${exec.chain.toLowerCase()}">${exec.chain}</span><span style="font-family:var(--mono);font-size:11px;cursor:pointer;color:var(--pb)">${exec.hash}</span></div>
-          <div style="font-family:var(--mono);color:var(--g);font-weight:900">+${exec.profit}</div>
+          <div style="font-family:var(--mono);color:var(--t3);font-weight:900">+${exec.profit}</div>
           <div style="font-size:10px;color:var(--t3)">${exec.time}</div>
         </div>
       `).join('');
@@ -260,7 +260,7 @@ export default function DashboardPage() {
       fuTrackRef.current.innerHTML = [...users, ...users].map(user => `
         <div class="fu-item">
           <div style="display:flex;align-items:center;gap:6px"><span style="font-size:16px">${user.country}</span><span style="font-weight:600">${user.name}</span></div>
-          <div style="font-family:var(--mono);color:var(--g);font-weight:700">${user.amount}</div>
+          <div style="font-family:var(--mono);color:var(--t3);font-weight:700">${user.amount}</div>
         </div>
       `).join('');
     }

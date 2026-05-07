@@ -111,9 +111,9 @@ export default function ArbionEngine() {
         </div>
         <div className="ws-pills">
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--g)", boxShadow: "0 0 4px var(--g)" }}></div>
+            <div className="ws-dot" style={{ background: "var(--t3)", boxShadow: "0 0 4px var(--t3)" }}></div>
             <span style={{ color: "var(--t3)" }}>Bot</span>
-            <span style={{ color: "var(--g)" }} id="wsBotPill">ACTIVE</span>
+            <span style={{ color: "var(--t3)" }} id="wsBotPill">ACTIVE</span>
           </div>
           <div className="ws-pill">
             <div className="ws-dot" style={{ background: "var(--pb)" }}></div>
@@ -130,24 +130,24 @@ export default function ArbionEngine() {
 
       <div id="p-analytics" className="page">
         <div className="g4">
-          <div className="card">
+          <div className="scard scc">
             <div className="ml">Total Profit</div>
-            <div className="mv" style={{ color: "var(--g)" }}>$8,241</div>
+            <div className="mv" style={{ color: "var(--t3)" }}>$8,241</div>
             <div className="mc up">▲ +18.3%</div>
           </div>
-          <div className="card">
+          <div className="scard scc">
             <div className="ml">Realized PnL</div>
             <div className="mv">$6,847</div>
             <div className="mc up">▲ +$341</div>
           </div>
-          <div className="card">
+          <div className="scard scc">
             <div className="ml">Total Trades</div>
             <div className="mv">12,847</div>
             <div style={{ fontSize: "10px", color: "var(--t3)", marginTop: "6px", fontFamily: "var(--mono)" }}>
               1190W · 107L
             </div>
           </div>
-          <div className="card">
+          <div className="scard scc">
             <div className="ml">Avg Profit</div>
             <div className="mv" style={{ color: "var(--a)" }}>$0.64</div>
             <div className="mc up">▲ +$0.08</div>
@@ -155,7 +155,7 @@ export default function ArbionEngine() {
         </div>
 
         <div className="g2">
-          <div className="card">
+          <div className="scard scc">
             <div className="sh">
               <div className="st">PnL Curve · 90d</div>
               <span className="tag tg">+$8,241</span>
@@ -167,7 +167,7 @@ export default function ArbionEngine() {
             </div>
           </div>
 
-          <div className="card">
+          <div className="scard scc">
             <div className="sh">
               <div className="st">Daily Profits · 30d</div>
             </div>
@@ -180,7 +180,7 @@ export default function ArbionEngine() {
         </div>
 
         <div className="g21">
-          <div className="card">
+          <div className="scard scc">
             <div className="sh">
               <div className="st">Trade History</div>
               <span className="sa" onClick={() => showToast('Exporting…', 'Preparing CSV download')}>
@@ -206,7 +206,7 @@ export default function ArbionEngine() {
             </div>
           </div>
 
-          <div className="card">
+          <div className="scard scc">
             <div className="sh">
               <div className="st">By Chain</div>
             </div>
@@ -219,7 +219,7 @@ export default function ArbionEngine() {
               <div className="pb-w">
                 <div className="pb-h">
                   <span>Solana</span>
-                  <span style={{ color: "var(--g)", fontFamily: "var(--mono)" }}>$4,285 · 52%</span>
+                  <span style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}>$4,285 · 52%</span>
                 </div>
                 <div className="pb-t">
                   <div className="pb-f" style={{ width: "52%", background: "#9945ff" }}></div>
@@ -228,7 +228,7 @@ export default function ArbionEngine() {
               <div className="pb-w">
                 <div className="pb-h">
                   <span>Ethereum</span>
-                  <span style={{ color: "var(--g)", fontFamily: "var(--mono)" }}>$2,555 · 31%</span>
+                  <span style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}>$2,555 · 31%</span>
                 </div>
                 <div className="pb-t">
                   <div className="pb-f" style={{ width: "31%", background: "#627eea" }}></div>
@@ -237,7 +237,7 @@ export default function ArbionEngine() {
               <div className="pb-w">
                 <div className="pb-h">
                   <span>BSC</span>
-                  <span style={{ color: "var(--g)", fontFamily: "var(--mono)" }}>$1,401 · 17%</span>
+                  <span style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}>$1,401 · 17%</span>
                 </div>
                 <div className="pb-t">
                   <div className="pb-f" style={{ width: "17%", background: "#f3ba2f" }}></div>

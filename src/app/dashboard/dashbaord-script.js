@@ -154,11 +154,11 @@ function togBot(l) {
   setTimeout(() => {
     if (lbl) {
       lbl.textContent = on ? 'ENGINE LIVE' : 'BOT STOPPED';
-      lbl.style.color = on ? 'var(--g)' : 'var(--r)';
+      lbl.style.color = on ? 'var(--t3)' : 'var(--r)';
     }
     if (dot) {
-      dot.style.background = on ? 'var(--g)' : 'var(--r)';
-      dot.style.boxShadow = on ? '0 0 6px var(--g)' : '0 0 6px var(--r)';
+      dot.style.background = on ? 'var(--t3)' : 'var(--r)';
+      dot.style.boxShadow = on ? '0 0 6px var(--t3)' : '0 0 6px var(--r)';
     }
   }, 60);
 }
@@ -618,7 +618,7 @@ function fillExecGrid() {
       <div class="ec-row"><span class="ec-lbl">TXID</span><button class="tx-link ec-val" onclick="openExplorer('${ch.k}','${hash}')" title="View on ${ch.name}">${shortHash} 🔗</button></div>
       <div class="ec-row"><span class="ec-lbl">Route</span><span class="ec-val" style="color:var(--t3);font-size:10px">${dexes[ri(0, dexes.length - 1)]}→${dexes[ri(0, dexes.length - 1)]}</span></div>
       <div class="ec-row"><span class="ec-lbl">Spread</span><span class="ec-val" style="color:var(--a)">${sp.toFixed(3)}%</span></div>
-      <div class="ec-profit" style="color:${won ? 'var(--g)' : 'var(--r)'}">${won ? '+' : '−'}$${pr.toFixed(2)}</div>
+      <div class="ec-profit" style="color:${won ? 'var(--t3)' : 'var(--r)'}">${won ? '+' : '−'}$${pr.toFixed(2)}</div>
       <div class="ec-time">${tNow()} · <span class="tag ${won ? 'tg' : 'tr'}" style="font-size:9px">${won ? 'WIN' : 'LOSS'}</span></div>
     </div>`;
   }
@@ -652,7 +652,7 @@ function fillHistTbl() {
       <td><span class="tag ${ch.cls}">${ch.lbl}</span></td>
       <td><button class="tx-link" style="font-size:10.5px" onclick="openExplorer('${ch.k}','${hash}')">🔗 ${ch.name}</button></td>
       <td>$${ri(200, 3000).toLocaleString()}</td>
-      <td style="color:var(--g)">+$${rf(0.5, 60)}</td>
+      <td style="color:var(--t3)">+$${rf(0.5, 60)}</td>
       <td><span class="tag tp">${strats[ri(0, 3)]}</span></td>
     </tr>`;
   }
@@ -711,7 +711,7 @@ function fillCommunity() {
     const d = document.createElement('div');
     d.className = 'mem';
     const lc = m.l === 'L1' ? 'tg' : m.l === 'L2' ? 'tc' : 'tp';
-    d.innerHTML = `<div class="mem-av" style="background:${m.col}22;color:${m.col}">${m.n[0].toUpperCase()}</div><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.n}</div><div style="font-size:10.5px;color:var(--t3)">Vol: ${m.v}</div></div><span class="tag ${lc}">${m.l}</span><span style="font-family:var(--mono);font-size:13px;font-weight:900;color:var(--g);flex-shrink:0">${m.c}</span>`;
+    d.innerHTML = `<div class="mem-av" style="background:${m.col}22;color:${m.col}">${m.n[0].toUpperCase()}</div><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.n}</div><div style="font-size:10.5px;color:var(--t3)">Vol: ${m.v}</div></div><span class="tag ${lc}">${m.l}</span><span style="font-family:var(--mono);font-size:13px;font-weight:900;color:var(--t3);flex-shrink:0">${m.c}</span>`;
     el.appendChild(d);
   });
 }

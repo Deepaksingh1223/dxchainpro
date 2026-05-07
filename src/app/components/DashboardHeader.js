@@ -1,17 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function DashboardHeader() {
   return (
     <aside className="sidebar">
       <div className="logo-area">
-        <div className="lmark">N</div>
-        <div>
-          <div className="ltext">NEX<em>ARB</em></div>
-          <div className="ltag">AI Terminal</div>
-        </div>
-        <div className="lbadge">PRO</div>
+        <Image
+          src="/LOG02.png"
+          alt="Logo"
+          width={200}
+          height={60}
+          priority
+        />
       </div>
       <div className="nb">
         <div className="nlbl">Platform</div>
