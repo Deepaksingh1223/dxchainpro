@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import DashboardSidebar from '../components/DashboardHeader';  // NEXARB Sidebar
+import DashboardSidebar from '../components/DashboardHeader'; // NEXARB Sidebar
 import DashboardTopbar from '../components/DashboardSidebar'; // NEXARB Topbar
-import DashboardPage from './page'; // Main content
+
 // Dashboard CSS now loaded globally in root layout.js - /assets/css/dashboard.css
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState('dark');
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -37,10 +39,24 @@ export default function RootLayout({ children }) {
       <div id="pts"></div>
 
       {/* MAIN LAYOUT */}
-      <div className="layout">
+      <div className="layout" data-sidebar-open={sidebarOpen ? '1' : '0'}>
+        {/* SIDEBAR TOGGLE (hamburger) */}
+        <button
+          type="button"
+          className="sidebar-hamburger"
+          aria-label="Toggle sidebar"
+          onClick={() => setSidebarOpen(v => !v)}
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+
         {/* NEXARB SIDEBAR */}
-        <DashboardSidebar />
-        
+        <div className="sidebar-wrap" aria-hidden={sidebarOpen ? 'false' : 'true'}>
+          <DashboardSidebar />
+        </div>
+
         {/* MAIN + TOPBAR */}
         <div className="main">
           <DashboardTopbar theme={theme} toggleTheme={toggleTheme} />
@@ -49,6 +65,7 @@ export default function RootLayout({ children }) {
           </main>
         </div>
       </div>
+
     </>
   );
 }

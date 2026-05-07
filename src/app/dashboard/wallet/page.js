@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto'; 
 
 export default function Wallet() {
   const walletChartRef = useRef(null);
@@ -63,11 +63,11 @@ export default function Wallet() {
           <tr>
             <td>${h.date}</td>
             <td>${h.type}</td>
-            <td style="color: ${h.amount.startsWith('+') ? 'var(--g)' : 'var(--r)'}">${h.amount}</td>
+            <td style="color: ${h.amount.startsWith('+') ? 'var(--t3)' : 'var(--r)'}">${h.amount}</td>
             <td>${h.network}</td>
-            <td style="font-family:var(--mono);font-size:10px">${h.txid}</td>
-            <td><a href="#" style="color:var(--pb);text-decoration:none" onclick="return false;">View →</a></td>
-            <td><span class="tag tg">${h.status}</span></td>
+            <td class="tx-hash">${h.txid}</td>
+            <td><a href="#" class="view-link" onclick="return false;">View →</a></td>
+            <td><span class="tag tag-completed">${h.status}</span></td>
           </tr>
         `).join('');
       }
@@ -91,8 +91,8 @@ export default function Wallet() {
     
     // Update UI
     const tabs = document.querySelectorAll('#wTabs .tab');
-    tabs.forEach(btn => btn.classList.remove('on'));
-    buttonElement.classList.add('on');
+    tabs.forEach(btn => btn.classList.remove('active'));
+    buttonElement.classList.add('active');
     
     // Show/hide content
     const depositDiv = document.getElementById('wD');
@@ -146,75 +146,75 @@ export default function Wallet() {
     <>
       <div className="ws">
         <div className="ws-av">A</div>
-        <div style={{ minWidth: 0 }}>
-          <div style={{ fontSize: "12.5px", fontWeight: 700 }} id="greetEl">
+        <div className="ws-info">
+          <div className="ws-greet" id="greetEl">
             Good morning, arbion123 ☀️
           </div>
-          <div style={{ fontSize: "10px", color: "var(--t3)" }}>
+          <div className="ws-login">
             Last login: Today 09:14 AM · 0x8b5…cf6A · IP 192.168.x.x
           </div>
         </div>
         <div className="ws-pills">
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--g)", boxShadow: "0 0 4px var(--g)" }}></div>
-            <span style={{ color: "var(--t3)" }}>Bot</span>
-            <span style={{ color: "var(--g)" }} id="wsBotPill">ACTIVE</span>
+            <div className="ws-dot ws-dot-active"></div>
+            <span className="ws-pill-label">Bot</span>
+            <span className="ws-pill-value" id="wsBotPill">ACTIVE</span>
           </div>
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--pb)" }}></div>
-            <span style={{ color: "var(--t3)" }}>Today</span>
-            <span style={{ color: "var(--pb)" }} id="wsPnl">+$341.20</span>
+            <div className="ws-dot ws-dot-purple"></div>
+            <span className="ws-pill-label">Today</span>
+            <span className="ws-pill-pnl-purple" id="wsPnl">+$341.20</span>
           </div>
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--a)" }}></div>
-            <span style={{ color: "var(--t3)" }}>Uptime</span>
-            <span style={{ color: "var(--a)" }} id="wsUp">14h 32m</span>
+            <div className="ws-dot ws-dot-accent"></div>
+            <span className="ws-pill-label">Uptime</span>
+            <span className="ws-pill-uptime" id="wsUp">14h 32m</span>
           </div>
         </div>
       </div>
 
-      <div id="p-wallet" className="page">
-        <div className="g3" style={{ marginBottom: "14px" }}>
-          <div className="wc">
-            <div style={{ fontSize: "22px", marginBottom: "8px" }}>🔷</div>
-            <div className="wc-n">Commission Wallet</div>
-            <div className="wc-b">$2,140.00</div>
-            <div style={{ fontSize: "10px", color: "var(--t3)", marginTop: "5px", fontFamily: "var(--mono)" }}>
+      <div className="page" id="p-wallet">
+        <div className="wallet-cards-grid">
+          <div className="wallet-card">
+            <div className="wallet-card-icon">🔷</div>
+            <div className="wallet-card-name">Commission Wallet</div>
+            <div className="wallet-card-balance">$2,140.00</div>
+            <div className="wallet-card-footer">
               USDT · TRC20
             </div>
           </div>
-          <div className="wc">
-            <div style={{ fontSize: "22px", marginBottom: "8px" }}>💵</div>
-            <div className="wc-n">Trading Wallet</div>
-            <div className="wc-b">$18,500.00</div>
-            <div style={{ fontSize: "10px", color: "var(--t3)", marginTop: "5px", fontFamily: "var(--mono)" }}>
+          <div className="wallet-card">
+            <div className="wallet-card-icon">💵</div>
+            <div className="wallet-card-name">Trading Wallet</div>
+            <div className="wallet-card-balance">$18,500.00</div>
+            <div className="wallet-card-footer">
               USDT · ERC20
             </div>
           </div>
-          <div className="wc">
-            <div style={{ fontSize: "22px", marginBottom: "8px" }}>📦</div>
-            <div className="wc-n">Compound Wallet</div>
-            <div className="wc-b">$27,192.00</div>
-            <div style={{ fontSize: "10px", color: "var(--t3)", marginTop: "5px", fontFamily: "var(--mono)" }}>
+          <div className="wallet-card">
+            <div className="wallet-card-icon">📦</div>
+            <div className="wallet-card-name">Compound Wallet</div>
+            <div className="wallet-card-balance">$27,192.00</div>
+            <div className="wallet-card-footer">
               SOL · Compound
             </div>
           </div>
         </div>
 
-        <div className="g21">
-          <div className="card">
+        <div className="grid-two-col">
+          <div className="scard wallet-tab-card">
             <div className="tabs" id="wTabs">
-              <button className="tab on" onClick={(e) => switchTab('d', e.currentTarget)}>Deposit</button>
+              <button className="tab active" onClick={(e) => switchTab('d', e.currentTarget)}>Deposit</button>
               <button className="tab" onClick={(e) => switchTab('w', e.currentTarget)}>Withdraw</button>
               <button className="tab" onClick={(e) => switchTab('h', e.currentTarget)}>History</button>
             </div>
             
             <div id="wD" style={{ display: activeTab === 'd' ? 'block' : 'none' }}>
-              <div className="g2" style={{ gap: "10px", marginBottom: "12px" }}>
-                <div className="fg" style={{ margin: 0 }}>
-                  <label className="fl">Currency</label>
+              <div className="two-col-grid">
+                <div className="form-group">
+                  <label className="form-label">Currency</label>
                   <select 
-                    className="fi" 
+                    className="form-input" 
                     value={depositCurrency}
                     onChange={(e) => setDepositCurrency(e.target.value)}
                   >
@@ -225,10 +225,10 @@ export default function Wallet() {
                     <option>BNB</option>
                   </select>
                 </div>
-                <div className="fg" style={{ margin: 0 }}>
-                  <label className="fl">Amount (USD)</label>
+                <div className="form-group">
+                  <label className="form-label">Amount (USD)</label>
                   <input 
-                    className="fi" 
+                    className="form-input" 
                     type="number" 
                     placeholder="Min $50"
                     value={depositAmount}
@@ -236,8 +236,8 @@ export default function Wallet() {
                   />
                 </div>
               </div>
-              <div style={{ background: "#020210", border: "1px solid var(--b1)", borderRadius: "var(--r8)", padding: "14px", display: "flex", alignItems: "center", gap: "16px", marginBottom: "12px" }}>
-                <div style={{ width: "80px", height: "80px", minWidth: "80px", background: "#fff", borderRadius: "var(--r8)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div className="deposit-address-box">
+                <div className="qr-placeholder">
                   <svg width="64" height="64" viewBox="0 0 64 64">
                     <rect x="4" y="4" width="24" height="24" rx="2" fill="none" stroke="#111" strokeWidth="3"/>
                     <rect x="10" y="10" width="12" height="12" fill="#111"/>
@@ -254,51 +254,49 @@ export default function Wallet() {
                     <rect x="56" y="56" width="8" height="8" fill="#111"/>
                   </svg>
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: "10px", color: "var(--t3)", marginBottom: "5px", fontWeight: 700 }}>
-                    DEPOSIT ADDRESS
-                  </div>
-                  <div style={{ fontFamily: "var(--mono)", fontSize: "10px", color: "var(--cb)", wordBreak: "break-all", marginBottom: "7px" }}>
+                <div className="address-info">
+                  <div className="address-label">DEPOSIT ADDRESS</div>
+                  <div className="address-value">
                     TXarbion8b5cf6A2D3EE7F4C9B0d1E2
                   </div>
-                  <button className="btn btn-g2" style={{ fontSize: "11px", padding: "4px 12px" }} onClick={copyAddress}>
+                  <button className="btn btn-secondary btn-small" onClick={copyAddress}>
                     Copy Address
                   </button>
                 </div>
               </div>
-              <div className="alert al-i">
+              <div className="alert alert-info">
                 Send only supported tokens. Minimum $50. Confirms in 1–3 min.
               </div>
-              <button className="btn btn-p" style={{ width: "100%", padding: "10px" }} onClick={generateInvoice}>
+              <button className="btn btn-primary btn-full" onClick={generateInvoice}>
                 Generate Invoice
               </button>
             </div>
 
             <div id="wW" style={{ display: activeTab === 'w' ? 'block' : 'none' }}>
-              <div className="fg">
-                <label className="fl">Destination Address</label>
+              <div className="form-group">
+                <label className="form-label">Destination Address</label>
                 <input 
-                  className="fi" 
+                  className="form-input" 
                   type="text" 
                   placeholder="0x… or Solana address"
                   value={withdrawAddress}
                   onChange={(e) => setWithdrawAddress(e.target.value)}
                 />
               </div>
-              <div className="fg">
-                <label className="fl">Amount (USD)</label>
+              <div className="form-group">
+                <label className="form-label">Amount (USD)</label>
                 <input 
-                  className="fi" 
+                  className="form-input" 
                   type="number" 
                   placeholder="Min $20"
                   value={withdrawAmount}
                   onChange={(e) => setWithdrawAmount(e.target.value)}
                 />
               </div>
-              <div className="fg">
-                <label className="fl">Network</label>
+              <div className="form-group">
+                <label className="form-label">Network</label>
                 <select 
-                  className="fi"
+                  className="form-input"
                   value={withdrawNetwork}
                   onChange={(e) => setWithdrawNetwork(e.target.value)}
                 >
@@ -308,27 +306,27 @@ export default function Wallet() {
                   <option>Solana (SOL)</option>
                 </select>
               </div>
-              <div className="fg">
-                <label className="fl">2FA Code</label>
+              <div className="form-group">
+                <label className="form-label">2FA Code</label>
                 <input 
-                  className="fi" 
+                  className="form-input" 
                   type="text" 
                   placeholder="6-digit code"
                   value={withdraw2FA}
                   onChange={(e) => setWithdraw2FA(e.target.value)}
                 />
               </div>
-              <div className="alert al-w">
+              <div className="alert alert-warning">
                 Withdrawals via smart contract. Gas fees apply. Est. 15–60 min.
               </div>
-              <button className="btn btn-p" style={{ width: "100%", padding: "10px" }} onClick={handleWithdraw}>
+              <button className="btn btn-primary btn-full" onClick={handleWithdraw}>
                 Withdraw via Smart Contract →
               </button>
             </div>
 
             <div id="wH" style={{ display: activeTab === 'h' ? 'block' : 'none' }}>
-              <div className="tw">
-                <table className="tbl">
+              <div className="table-wrapper">
+                <table className="data-table">
                   <thead>
                     <tr>
                       <th>Date</th>
@@ -346,36 +344,36 @@ export default function Wallet() {
             </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <div className="card">
-              <div className="st" style={{ marginBottom: "10px" }}>Portfolio Split</div>
-              <div className="cw" style={{ height: "140px" }}>
+          <div className="right-col">
+            <div className="scard portfolio-card">
+              <div className="section-title">Portfolio Split</div>
+              <div className="chart-container">
                 <canvas ref={walletChartRef} role="img" aria-label="Wallet split">
                   Compound 57%, Trading 39%, Commission 4%.
                 </canvas>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "10px", fontSize: "12.5px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "var(--t2)" }}>In Bot</span>
-                  <span style={{ fontFamily: "var(--mono)", color: "var(--pb)" }}>$31,200</span>
+              <div className="portfolio-stats">
+                <div className="portfolio-row">
+                  <span className="portfolio-label">In Bot</span>
+                  <span className="portfolio-value bot-value">$31,200</span>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "var(--t2)" }}>Available</span>
-                  <span style={{ fontFamily: "var(--mono)", color: "var(--g)" }}>$16,632</span>
+                <div className="portfolio-row">
+                  <span className="portfolio-label">Available</span>
+                  <span className="portfolio-value available-value">$16,632</span>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "var(--t2)" }}>Gas Reserve</span>
-                  <span style={{ fontFamily: "var(--mono)", color: "var(--a)" }}>$248</span>
+                <div className="portfolio-row">
+                  <span className="portfolio-label">Gas Reserve</span>
+                  <span className="portfolio-value gas-value">$248</span>
                 </div>
               </div>
             </div>
 
-            <div className="card">
-              <div className="st" style={{ marginBottom: "10px" }}>Quick Swap</div>
-              <div className="fg">
-                <label className="fl">From</label>
+            <div className="scard swap-card">
+              <div className="section-title">Quick Swap</div>
+              <div className="form-group">
+                <label className="form-label">From</label>
                 <select 
-                  className="fi"
+                  className="form-input"
                   value={swapFrom}
                   onChange={(e) => setSwapFrom(e.target.value)}
                 >
@@ -384,10 +382,10 @@ export default function Wallet() {
                   <option>ETH</option>
                 </select>
               </div>
-              <div className="fg">
-                <label className="fl">To</label>
+              <div className="form-group">
+                <label className="form-label">To</label>
                 <select 
-                  className="fi"
+                  className="form-input"
                   value={swapTo}
                   onChange={(e) => setSwapTo(e.target.value)}
                 >
@@ -396,17 +394,17 @@ export default function Wallet() {
                   <option>USDT</option>
                 </select>
               </div>
-              <div className="fg">
-                <label className="fl">Amount</label>
+              <div className="form-group">
+                <label className="form-label">Amount</label>
                 <input 
-                  className="fi" 
+                  className="form-input" 
                   type="number" 
                   placeholder="0.00"
                   value={swapAmount}
                   onChange={(e) => setSwapAmount(e.target.value)}
                 />
               </div>
-              <button className="btn btn-p" style={{ width: "100%", padding: "8px", fontSize: "12px" }} onClick={handleSwap}>
+              <button className="btn btn-primary btn-full" onClick={handleSwap}>
                 Swap →
               </button>
             </div>

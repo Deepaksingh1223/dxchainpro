@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto'; 
 
 export default function ArbionEngine() {
   const scanChartRef = useRef(null);
@@ -57,17 +57,15 @@ export default function ArbionEngine() {
   const toggleBot = (event) => {
     const isChecked = event.target.checked;
     setBotChecked(isChecked);
-    // Update UI elements
     const wsBotPill = document.getElementById('wsBotPill');
     if (wsBotPill) {
       wsBotPill.textContent = isChecked ? 'ACTIVE' : 'PAUSED';
-      wsBotPill.style.color = isChecked ? 'var(--g)' : 'var(--r)';
+      wsBotPill.style.color = isChecked ? 'var(--t3)' : 'var(--r)';
     }
   };
 
   const pickStrategy = (strategyName) => {
     setSelectedStrategy(strategyName);
-    // Update UI to show selected
     const allStrategies = document.querySelectorAll('.sc');
     allStrategies.forEach((strategy, index) => {
       if (strategy.querySelector('.sc-n')?.textContent === strategyName) {
@@ -98,12 +96,14 @@ export default function ArbionEngine() {
         { hash: '0xd5e2...a712', profit: '+$89.40', chain: 'SOL', age: '31s ago' },
         { hash: '0x1c8f...e945', profit: '+$67.80', chain: 'ETH', age: '44s ago' }
       ];
-      
+
       txEl.innerHTML = transactions.map(tx => `
         <div class="tx-item">
-          <div><span class="tag ${tx.chain.toLowerCase()}">${tx.chain}</span><span style="font-family:var(--mono);margin-left:8px;cursor:pointer;color:var(--pb)">${tx.hash}</span></div>
-          <div style="font-family:var(--mono);color:var(--g);font-weight:700">${tx.profit}</div>
-          <div style="font-size:10px;color:var(--t3)">${tx.age}</div>
+          <div><span class="tag ${tx.chain.toLowerCase()}">${tx.chain}</span>
+          <span class="ml">${tx.hash}</span>
+          </div>
+          <div class="ml">${tx.profit}</div>
+          <div class="ml">${tx.age}</div>
         </div>
       `).join('');
     }
@@ -127,87 +127,88 @@ export default function ArbionEngine() {
 
   return (
     <>
+   
       <div className="ws">
         <div className="ws-av">A</div>
-        <div style={{ minWidth: 0 }}>
-          <div style={{ fontSize: "12.5px", fontWeight: 700 }} id="greetEl">
+        <div className="ws-info">
+          <div className="ws-greet" id="greetEl">
             Good morning, arbion123 ☀️
           </div>
-          <div style={{ fontSize: "10px", color: "var(--t3)" }}>
+          <div className="ws-login">
             Last login: Today 09:14 AM · 0x8b5…cf6A · IP 192.168.x.x
           </div>
         </div>
         <div className="ws-pills">
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--g)", boxShadow: "0 0 4px var(--g)" }}></div>
-            <span style={{ color: "var(--t3)" }}>Bot</span>
-            <span style={{ color: "var(--g)" }} id="wsBotPill">ACTIVE</span>
+            <div className="ws-dot ws-dot-active"></div>
+            <span className="ws-pill-label">Bot</span>
+            <span className="ws-pill-value" id="wsBotPill">ACTIVE</span>
           </div>
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--pb)" }}></div>
-            <span style={{ color: "var(--t3)" }}>Today</span>
-            <span style={{ color: "var(--pb)" }} id="wsPnl">+$341.20</span>
+            <div className="ws-dot ws-dot-neutral"></div>
+            <span className="ws-pill-label">Today</span>
+            <span className="ws-pill-pnl" id="wsPnl">+$341.20</span>
           </div>
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--a)" }}></div>
-            <span style={{ color: "var(--t3)" }}>Uptime</span>
-            <span style={{ color: "var(--a)" }} id="wsUp">14h 32m</span>
+            <div className="ws-dot ws-dot-accent"></div>
+            <span className="ws-pill-label">Uptime</span>
+            <span className="ws-pill-uptime" id="wsUp">14h 32m</span>
           </div>
         </div>
       </div>
 
-      <div id="p-engine" className="page">
-        <div className="g21" style={{ alignItems: "start" }}>
-          <div>
-            <div className="card card-hi" style={{ marginBottom: "12px" }}>
-              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
-                <div>
-                  <div style={{ fontSize: "18px", fontWeight: 900, letterSpacing: "-.3px", marginBottom: "3px" }}>
+      <div className="page" id="p-engine">
+        <div className="grid-two-col">
+          <div className="left-col">
+            <div className="scard main-card">
+              <div className="card-header">
+                <div className="card-title-section">
+                  <div className="card-title">
                     Arbion Engine
                   </div>
-                  <div style={{ fontSize: "11.5px", color: "var(--t3)" }}>
+                  <div className="card-subtitle">
                     AI MEV + cross-chain arb · 24/7 autonomous — click TX to view on explorer
                   </div>
                 </div>
-                <label className="tog">
-                  <input 
-                    type="checkbox" 
-                    id="botChk" 
-                    checked={botChecked} 
+                <label className="toggle">
+                  <input
+                    type="checkbox"
+                    id="botChk"
+                    checked={botChecked}
                     onChange={toggleBot}
                   />
-                  <div className="tog-tr"></div>
-                  <div className="tog-th"></div>
+                  <div className="toggle-track"></div>
+                  <div className="toggle-thumb"></div>
                 </label>
               </div>
-              <div className="g3" style={{ marginBottom: "14px" }}>
-                <div className="sg">
-                  <div className="sg-l">Opps/min</div>
-                  <div className="sg-v" style={{ color: "var(--c)" }} id="opm">142</div>
+              <div className="stats-grid">
+                <div className="scard stat-card">
+                  <div className="stat-label">Opps/min</div>
+                  <div className="stat-value stat-value-primary" id="opm">142</div>
                 </div>
-                <div className="sg">
-                  <div className="sg-l">Avg Spread</div>
-                  <div className="sg-v" style={{ color: "var(--g)" }}>0.38%</div>
+                <div className="scard stat-card">
+                  <div className="stat-label">Avg Spread</div>
+                  <div className="stat-value stat-value-secondary">0.38%</div>
                 </div>
-                <div className="sg">
-                  <div className="sg-l">Execs today</div>
-                  <div className="sg-v" style={{ color: "var(--pb)" }} id="exc">1,847</div>
+                <div className="scard stat-card">
+                  <div className="stat-label">Execs today</div>
+                  <div className="stat-value stat-value-tertiary" id="exc">1,847</div>
                 </div>
               </div>
-              <div className="sh">
-                <div className="st" style={{ fontSize: "12.5px" }}>Live TX Stream</div>
-                <span className="tag tg">● LIVE</span>
+              <div className="section-header">
+                <div className="section-title">Live TX Stream</div>
+                <span className="tag tag-live">● LIVE</span>
               </div>
-              <div className="txl" id="txEl"></div>
+              <div className="transactions-list" id="txEl"></div>
             </div>
-            <div className="card">
-              <div className="sh">
-                <div className="st" style={{ fontSize: "12.5px" }}>Scanner Activity</div>
-                <span className="tag tc">Real-time</span>
+            <div className="scard scanner-card">
+              <div className="section-header">
+                <div className="section-title">Scanner Activity</div>
+                <span className="tag tag-real">Real-time</span>
               </div>
-              <div className="scan-w">
-                <div className="scan-line"></div>
-                <div className="cw" style={{ height: "86px" }}>
+              <div className="scanner-container">
+                <div className="scanner-line"></div>
+                <div className="chart-wrapper">
                   <canvas ref={scanChartRef} role="img" aria-label="Scanner">
                     Scanner detecting opportunities.
                   </canvas>
@@ -215,100 +216,100 @@ export default function ArbionEngine() {
               </div>
             </div>
           </div>
-          <div>
-            <div className="card" style={{ marginBottom: "12px" }}>
-              <div className="st" style={{ marginBottom: "12px" }}>Strategy Mode</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-                <div 
-                  className={`sc ${selectedStrategy === 'MEV Sandwich' ? 'sel' : ''}`} 
+          <div className="right-col">
+            <div className="scard strategy-card">
+              <div className="section-title">Strategy Mode</div>
+              <div className="strategies-list">
+                <div
+                  className={`strategy-item ${selectedStrategy === 'MEV Sandwich' ? 'selected' : ''}`}
                   onClick={() => pickStrategy('MEV Sandwich')}
                 >
-                  <div className="sc-check">
+                  <div className="strategy-check">
                     <svg width="8" height="8" viewBox="0 0 8 8">
-                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none" />
                     </svg>
                   </div>
-                  <div className="sc-n">MEV Sandwich</div>
-                  <div className="sc-d">Front-run pending large txs</div>
-                  <div className="sc-a">~340% APY</div>
+                  <div className="strategy-name">MEV Sandwich</div>
+                  <div className="strategy-desc">Front-run pending large txs</div>
+                  <div className="strategy-apy">~340% APY</div>
                 </div>
-                <div 
-                  className={`sc ${selectedStrategy === 'Cross-DEX Arb' ? 'sel' : ''}`} 
+                <div
+                  className={`strategy-item ${selectedStrategy === 'Cross-DEX Arb' ? 'selected' : ''}`}
                   onClick={() => pickStrategy('Cross-DEX Arb')}
                 >
-                  <div className="sc-check">
+                  <div className="strategy-check">
                     <svg width="8" height="8" viewBox="0 0 8 8">
-                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none" />
                     </svg>
                   </div>
-                  <div className="sc-n">Cross-DEX Arb</div>
-                  <div className="sc-d">Jupiter, Orca, Uniswap, Curve</div>
-                  <div className="sc-a">~180% APY</div>
+                  <div className="strategy-name">Cross-DEX Arb</div>
+                  <div className="strategy-desc">Jupiter, Orca, Uniswap, Curve</div>
+                  <div className="strategy-apy">~180% APY</div>
                 </div>
-                <div 
-                  className={`sc ${selectedStrategy === 'Flash Loan Arb' ? 'sel' : ''}`} 
+                <div
+                  className={`strategy-item ${selectedStrategy === 'Flash Loan Arb' ? 'selected' : ''}`}
                   onClick={() => pickStrategy('Flash Loan Arb')}
                 >
-                  <div className="sc-check">
+                  <div className="strategy-check">
                     <svg width="8" height="8" viewBox="0 0 8 8">
-                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none" />
                     </svg>
                   </div>
-                  <div className="sc-n">Flash Loan Arb</div>
-                  <div className="sc-d">Aave/dYdX zero-capital flash</div>
-                  <div className="sc-a">~260% APY</div>
+                  <div className="strategy-name">Flash Loan Arb</div>
+                  <div className="strategy-desc">Aave/dYdX zero-capital flash</div>
+                  <div className="strategy-apy">~260% APY</div>
                 </div>
-                <div 
-                  className={`sc ${selectedStrategy === 'Triangular Arb' ? 'sel' : ''}`} 
+                <div
+                  className={`strategy-item ${selectedStrategy === 'Triangular Arb' ? 'selected' : ''}`}
                   onClick={() => pickStrategy('Triangular Arb')}
                 >
-                  <div className="sc-check">
+                  <div className="strategy-check">
                     <svg width="8" height="8" viewBox="0 0 8 8">
-                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                      <polyline points="1.5,4 3,5.5 6.5,2" stroke="#fff" strokeWidth="1.5" fill="none" />
                     </svg>
                   </div>
-                  <div className="sc-n">Triangular Arb</div>
-                  <div className="sc-d">A → B → C → A profit loops</div>
-                  <div className="sc-a">~120% APY</div>
+                  <div className="strategy-name">Triangular Arb</div>
+                  <div className="strategy-desc">A → B → C → A profit loops</div>
+                  <div className="strategy-apy">~120% APY</div>
                 </div>
               </div>
             </div>
-            <div className="card">
-              <div className="st" style={{ marginBottom: "12px" }}>Parameters</div>
-              <div className="fg">
-                <label className="fl">Max slippage</label>
-                <input 
-                  type="range" 
-                  min="0.1" 
-                  max="3" 
-                  step="0.1" 
-                  value={slippage} 
+            <div className="scard params-card">
+              <div className="section-title">Parameters</div>
+              <div className="form-group">
+                <label className="form-label">Max slippage</label>
+                <input
+                  type="range"
+                  min="0.1"
+                  max="3"
+                  step="0.1"
+                  value={slippage}
                   onChange={handleSlippageChange}
-                  style={{ width: "100%", accentColor: "var(--p)" }}
+                  className="slider-input"
                 />
-                <div style={{ textAlign: "right", fontSize: "11px", color: "var(--pb)", fontFamily: "var(--mono)", marginTop: "2px" }} id="slO">
+                <div className="slider-value" id="slO">
                   {slippage}%
                 </div>
               </div>
-              <div className="fg">
-                <label className="fl">Min profit (USD)</label>
-                <input 
-                  className="fi" 
-                  type="number" 
-                  value={minProfit} 
+              <div className="form-group">
+                <label className="form-label">Min profit (USD)</label>
+                <input
+                  className="form-input"
+                  type="number"
+                  value={minProfit}
                   onChange={(e) => setMinProfit(parseInt(e.target.value) || 0)}
                 />
               </div>
-              <div className="fg">
-                <label className="fl">Max gas (gwei)</label>
-                <input 
-                  className="fi" 
-                  type="number" 
-                  value={maxGas} 
+              <div className="form-group">
+                <label className="form-label">Max gas (gwei)</label>
+                <input
+                  className="form-input"
+                  type="number"
+                  value={maxGas}
                   onChange={(e) => setMaxGas(parseInt(e.target.value) || 0)}
                 />
               </div>
-              <button className="btn btn-p" style={{ width: "100%", padding: "9px" }} onClick={applySettings}>
+              <button className="btn btn-primary" onClick={applySettings}>
                 Apply &amp; Restart
               </button>
             </div>

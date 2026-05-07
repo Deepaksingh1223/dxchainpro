@@ -158,9 +158,9 @@ export default function Simulate() {
         </div>
         <div className="ws-pills">
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--g)", boxShadow: "0 0 4px var(--g)" }}></div>
+            <div className="ws-dot" style={{ background: "var(--t3)", boxShadow: "0 0 4px var(--t3)" }}></div>
             <span style={{ color: "var(--t3)" }}>Bot</span>
-            <span style={{ color: "var(--g)" }} id="wsBotPill">ACTIVE</span>
+            <span style={{ color: "var(--t3)" }} id="wsBotPill">ACTIVE</span>
           </div>
           <div className="ws-pill">
             <div className="ws-dot" style={{ background: "var(--pb)" }}></div>
@@ -178,7 +178,7 @@ export default function Simulate() {
       <div id="p-simulate" className="page">
         <div className="g12" style={{ alignItems: "start" }}>
           <div>
-            <div className="card" style={{ marginBottom: "12px" }}>
+            <div className="scard scc" style={{ marginBottom: "12px" }}>
               <div className="st" style={{ marginBottom: "14px" }}>Simulate Trade</div>
               <div className="fg">
                 <label className="fl">Token Pair</label>
@@ -248,25 +248,25 @@ export default function Simulate() {
             </div>
             
             {showResults && (
-              <div className="card" id="simRes" style={{ display: "block" }}>
+              <div className="scard scc" id="simRes" style={{ display: "block" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "12px" }}>
                   <div className="pulse"></div>
-                  <span className="st" style={{ color: "var(--g)" }}>Simulation Complete</span>
+                  <span className="st" style={{ color: "var(--t3)" }}>Simulation Complete</span>
                 </div>
                 <div className="g2" style={{ gap: "8px", marginBottom: "12px" }}>
-                  <div className="sg">
+                  <div className="scard scc">
                     <div className="sg-l">Return</div>
-                    <div className="sg-v" style={{ color: "var(--g)" }} id="sRet">+{simResults.return}%</div>
+                    <div className="sg-v" style={{ color: "var(--t3)" }} id="sRet">+{simResults.return}%</div>
                   </div>
-                  <div className="sg">
+                  <div className="scard scc">
                     <div className="sg-l">Net Profit</div>
-                    <div className="sg-v" style={{ color: "var(--g)" }} id="sPro">+${simResults.profit}</div>
+                    <div className="sg-v" style={{ color: "var(--t3)" }} id="sPro">+${simResults.profit}</div>
                   </div>
-                  <div className="sg">
+                  <div className="scard scc">
                     <div className="sg-l">Drawdown</div>
                     <div className="sg-v" style={{ color: "var(--a)" }}>-{simResults.drawdown}%</div>
                   </div>
-                  <div className="sg">
+                  <div className="scard scc">
                     <div className="sg-l">Sharpe</div>
                     <div className="sg-v" style={{ color: "var(--c)" }}>{simResults.sharpe}</div>
                   </div>
@@ -275,7 +275,7 @@ export default function Simulate() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "12.5px", marginBottom: "12px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "var(--t2)" }}>Gross profit</span>
-                    <span style={{ fontFamily: "var(--mono)", color: "var(--g)" }}>+${simResults.grossProfit}</span>
+                    <span style={{ fontFamily: "var(--mono)", color: "var(--t3)" }}>+${simResults.grossProfit}</span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "var(--t2)" }}>Gas fees</span>
@@ -287,7 +287,7 @@ export default function Simulate() {
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid var(--b1)", paddingTop: "6px", fontWeight: 700 }}>
                     <span>Net profit</span>
-                    <span style={{ fontFamily: "var(--mono)", color: "var(--g)" }} id="sNet">+${simResults.netProfit}</span>
+                    <span style={{ fontFamily: "var(--mono)", color: "var(--t3)" }} id="sNet">+${simResults.netProfit}</span>
                   </div>
                 </div>
                 <button className="btn btn-p" style={{ width: "100%", padding: "9px" }} onClick={executeStrategy}>
@@ -297,7 +297,7 @@ export default function Simulate() {
             )}
           </div>
           
-          <div className="card">
+          <div className="scard scc">
             <div className="st" style={{ marginBottom: "12px" }}>Backtest Chart</div>
             <div className="cw" style={{ height: "260px" }}>
               <canvas ref={backtestChartRef} role="img" aria-label="Backtest">

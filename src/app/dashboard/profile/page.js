@@ -54,9 +54,9 @@ export default function Profile() {
         </div>
         <div className="ws-pills">
           <div className="ws-pill">
-            <div className="ws-dot" style={{ background: "var(--g)", boxShadow: "0 0 4px var(--g)" }}></div>
+            <div className="ws-dot" style={{ background: "var(--t3)", boxShadow: "0 0 4px var(--t3)" }}></div>
             <span style={{ color: "var(--t3)" }}>Bot</span>
-            <span style={{ color: "var(--g)" }} id="wsBotPill">ACTIVE</span>
+            <span style={{ color: "var(--t3)" }} id="wsBotPill">ACTIVE</span>
           </div>
           <div className="ws-pill">
             <div className="ws-dot" style={{ background: "var(--pb)" }}></div>
@@ -74,7 +74,7 @@ export default function Profile() {
       <div id="p-profile" className="page">
         <div className="g21">
           <div>
-            <div className="card" style={{ marginBottom: "12px" }}>
+            <div className="scard scc" style={{ marginBottom: "12px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "18px" }}>
                 <div className="pf-av">A</div>
                 <div>
@@ -140,31 +140,31 @@ export default function Profile() {
               </button>
             </div>
             
-            <div className="card">
+            <div className="scard scc">
               <div className="st" style={{ marginBottom: "12px" }}>Account Stats</div>
               <div className="g2" style={{ gap: "8px" }}>
-                <div style={{ background: "var(--card2)", border: "1px solid var(--b1)", borderRadius: "var(--r8)", padding: "12px" }}>
+                <div classname="scard scc">
                   <div className="ml">Member Since</div>
-                  <div style={{ fontSize: "14px", fontWeight: 700, marginTop: "3px" }}>Jan 2024</div>
+                  <div>Jan 2024</div>
                 </div>
-                <div style={{ background: "var(--card2)", border: "1px solid var(--b1)", borderRadius: "var(--r8)", padding: "12px" }}>
+                <div >
                   <div className="ml">Total Deposited</div>
-                  <div style={{ fontSize: "14px", fontWeight: 700, fontFamily: "var(--mono)", marginTop: "3px" }}>$42,000</div>
+                  <div>$42,000</div>
                 </div>
-                <div style={{ background: "var(--card2)", border: "1px solid var(--b1)", borderRadius: "var(--r8)", padding: "12px" }}>
+                <div classname="scard scc">
                   <div className="ml">Total Withdrawn</div>
-                  <div style={{ fontSize: "14px", fontWeight: 700, fontFamily: "var(--mono)", marginTop: "3px", color: "var(--g)" }}>$14,200</div>
+                  <div>$14,200</div>
                 </div>
-                <div style={{ background: "var(--card2)", border: "1px solid var(--b1)", borderRadius: "var(--r8)", padding: "12px" }}>
+                <div classname="scard scc">
                   <div className="ml">Referrals</div>
-                  <div style={{ fontSize: "14px", fontWeight: 700, fontFamily: "var(--mono)", marginTop: "3px", color: "var(--c)" }}>12 direct</div>
+                  <div>12 direct</div>
                 </div>
               </div>
             </div>
           </div>
           
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <div className="card">
+            <div className="scard scc">
               <div className="st" style={{ marginBottom: "13px" }}>Security &amp; Settings</div>
               <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px" }}>
@@ -245,7 +245,7 @@ export default function Profile() {
               </div>
             </div>
             
-            <div className="card">
+            <div className="scard scc">
               <div className="st" style={{ marginBottom: "10px" }}>Affiliate Code</div>
               <div className="ref-link" style={{ marginBottom: "8px" }}>ARB-a9x7k2</div>
               <button className="btn btn-g2" style={{ width: "100%", padding: "8px", fontSize: "12px" }} onClick={copyAffiliateCode}>
@@ -253,7 +253,7 @@ export default function Profile() {
               </button>
             </div>
             
-            <div className="card">
+            <div className="scard scc">
               <div className="st" style={{ marginBottom: "10px" }}>API Access</div>
               <div className="ref-link" style={{ marginBottom: "8px" }}>arb_live_••••••••••••••••</div>
               <button className="btn btn-g2" style={{ width: "100%", padding: "8px", fontSize: "12px" }} onClick={revealApiKey}>

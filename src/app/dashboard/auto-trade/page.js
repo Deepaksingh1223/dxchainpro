@@ -1,10 +1,13 @@
-"use client";
- 
-export default function autotrade() {
-  
+ "use client";
+
+export default function Autotrade() {
   return (
     <>
-       <h1 className="text-white">auto-trade</h1>
+      <div className="ws">
+        <div className="ws-av">A</div>
+       
+      </div>
+ 
     </>
   );
 }
