@@ -2092,7 +2092,7 @@ button {
 
 @media(max-width:1024px) {
   .mid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr !important 
   }
 
   .sidebar {
@@ -2157,7 +2157,7 @@ button {
   }
 
   .bot3 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     flex-wrap: wrap;
     display: flex;
   }
@@ -2190,7 +2190,7 @@ button {
 
   .mgrid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 9px;
     margin-bottom: 20px;
   }
@@ -2200,7 +2200,11 @@ button {
   }
 
   .cbitems {
-    flex-direction: column
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .notif-bar{
+    flex-wrap: wrap;
   }
 }
 
@@ -3114,7 +3118,9 @@ a.ni {
   background: linear-gradient(135deg, rgba(245, 158, 11, .14), rgba(245, 158, 11, .05));
   border-color: rgba(245, 158, 11, .23)
 }
-
+svg.svg-size {
+    width: 20px;
+}
 .gl::after {
   content: '';
   position: absolute;
@@ -4515,7 +4521,7 @@ input{
 
   .g21,
   .g12 {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr !important
   }
 
   .topbar {
@@ -4545,7 +4551,7 @@ input{
   }
 
   .it-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr !important
   }
 
   .exec-grid {
@@ -5537,3 +5543,4 @@ input:checked + .toggle-track + .toggle-thumb {
     font-size: 24px;
   }
 }
+

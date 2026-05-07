@@ -8,12 +8,12 @@ export default function DashboardHeader() {
     <aside className="sidebar">
       <div className="logo-area">
         <Image
-          src="/LOG02.png"
+          src="/white.png"
           alt="Logo"
           width={200}
           height={60}
           priority
-        />
+        /> 
       </div>
       <div className="nb">
         <div className="nlbl">Platform</div>
