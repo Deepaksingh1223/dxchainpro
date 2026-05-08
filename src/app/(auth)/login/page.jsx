@@ -820,18 +820,16 @@ export default function Register() {
                         className="dcp-wallet-row"
                         onClick={() => setWalletScreen("get-wallet")}
                       >
-                        <div style={{ width: 36, height: 36, borderRadius: 10, background: "#f3faf7", border: "1px solid #e0f0eb", display: "flex", alignItems: "center", justifyContent: "center", gap: 3, flexShrink: 0, flexWrap: "wrap", padding: 4 }}>
+                        {/* <div style={{ width: 36, height: 36, borderRadius: 10, background: "#f3faf7", border: "1px solid #e0f0eb", display: "flex", alignItems: "center", justifyContent: "center", gap: 3, flexShrink: 0, flexWrap: "wrap", padding: 4 }}>
                           {["#1b9cf2","#0052ff","#ff4500","#00b894"].map((c, i) => (
                             <div key={i} style={{ width: 12, height: 12, borderRadius: 3, background: c }} />
                           ))}
-                        </div>
+                        </div> */}
                         <span className="dcp-wallet-info">
                           <span className="dcp-wallet-name">Other Wallets</span>
                           <span className="dcp-wallet-desc">Browse all supported wallets</span>
                         </span>
-                        <svg className="dcp-w-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
+                        
                       </button>
                     </div>
 
