@@ -310,8 +310,8 @@ export default function AllSection() {
             {/* Hero Video */}
             <div className="col-xl-6 wow fadeInRight" data-wow-delay=".3s">
               <div className="hero-video">
-                <video autoPlay loop muted playsInline>
-                  <source src="/assets/img/bg/aior.mp4" type="video/mp4" />
+                <video autoPlay loop muted playsInline className="new-banner-video">
+                  <source src="/banner-video.mp4" type="video/mp4"  />
                 </video>
               </div>
             </div>
